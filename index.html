@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gestor de Tareas • Rosa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container" role="application">
+<header>
+<div class="logo">GT</div>
+<div>
+<h1>Gestor de Tareas • Rosa</h1>
+<p class="lead">Organiza tus tareas y genera un PDF con las tareas registradas.</p>
+</div>
+</header>
+
+
+<main class="tasks" aria-labelledby="tareas">
+<form id="addForm" class="add-form" onsubmit="return false;">
+<input id="taskInput" type="text" placeholder="Describe la tarea..." aria-label="Nueva tarea">
+<button id="addBtn" class="btn">Añadir</button>
+</form>
+
+
+<div class="task-list" id="taskList" role="list" aria-live="polite"></div>
+
+
+<div style="margin-top:14px;display:flex;gap:8px">
+<button id="clearBtn" class="btn-ghost">Limpiar todas</button>
+<button id="exportBtn" class="btn" title="Generar PDF">Generar PDF</button>
+</div>
+</main>
+
+
+<aside class="aside right">
+<div class="stat">
+<small class="small">Tareas totales</small>
+<strong id="countTotal">0</strong>
+</div>
+<div class="stat">
+<small class="small">Completadas</small>
+<strong id="countDone">0</strong>
+</div>
+<div class="stat">
+<small class="small">Pendientes</small>
+<strong id="countPending">0</strong>
+</div>
+<hr style="border:none;height:1px;background:rgba(66,40,58,0.04);margin:12px 0;border-radius:1px">
+<p class="small">Consejo: usa la tecla Enter para añadir una tarea rápidamente. Las tareas se guardan en tu navegador.</p>
+</aside>
+
+
+<footer>
+<div class="muted">Gestor de Tareas • Hecho con ❤️</div>
+<div class="muted">Formato de exportación: PDF</div>
+</footer>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
